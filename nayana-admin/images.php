@@ -50,6 +50,19 @@ if (isset($_GET['category_name'])) {
         $images = array_diff(scandir($categoryFolder), array('.', '..')); // Get current images in the directory
     }
 }
+
+if (isset($_POST['delete_image'])) {
+    $imageToDelete = $_POST['delete_image'];
+    $imagePath = $categoryFolder . '/' . $imageToDelete;
+    if (file_exists($imagePath)) {
+        if (unlink($imagePath)) {
+            echo 'success';
+            exit;
+        }
+    }
+    echo 'failed';
+    exit;
+}
 ?>
 
 <?php include_once('./head.php'); ?>
@@ -90,13 +103,14 @@ if (isset($_GET['category_name'])) {
                         ?>
                     </div>
                     <div class="col-md-6">
-                        <div id="imagesContainer" >
+                        <div id="imagesContainer" class="mt-4">
                             <?php
                             if (isset($images)) {
                                 if (count($images) > 0) {
                                     echo '<h6>Current Images in ' . $selectedCategory . '</h6>';
                                     foreach ($images as $image) {
-                                        echo '<img src="' . $categoryFolder . '/' . $image . '" style="max-width: 200px; margin: 5px;" />';
+                                        echo '<div style="display: inline-block; position: relative;"><img src="' . $categoryFolder . '/' . $image . '" data-toggle="modal" data-target="#imageModal" style="max-width: 200px; margin: 5px; cursor: pointer;" />';
+                                        echo '<span style="position: absolute; top: 5px; right: 5px;"><a href="#" class="deleteImage" data-image="' . $image . '"><i class="fas fa-trash-alt"></i></a></span></div>';
                                     }
                                 } else {
                                     echo '<p>No images in ' . $selectedCategory . ' folder.</p>';
@@ -109,6 +123,51 @@ if (isset($_GET['category_name'])) {
             </div>
         </div>
     </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" id="modalImage" style="max-width: 100%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script>
+        $(document).on('click', 'img[data-toggle="modal"]', function () {
+            var image = $(this).attr('src');
+            $('#modalImage').attr('src', image);
+        });
+
+        $(document).on('click', '.deleteImage', function (e) {
+            e.preventDefault();
+            var image = $(this).data('image');
+            if (confirm('Are you sure you want to delete this image?')) {
+                $.ajax({
+                    url: window.location.href,
+                    type: 'POST',
+                    data: { delete_image: image },
+                    success: function (response) {
+                        if (response === 'success') {
+                            location.reload(); // Reload the page after deletion
+                        } else {
+                            alert('Failed to delete the image.');
+                        }
+                    },
+                    error: function () {
+                        alert('Failed to delete the image.');
+                    }
+                });
+            }
+        });
+    </script>
     <script>
         function showImages(category) {
             window.location.href = 'images.php?category_name=' + category;
