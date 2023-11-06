@@ -114,7 +114,7 @@ if (isset($_POST['delete_image'])) {
                                         echo '<form method="post" action="delete_image.php" style="position: relative; text-align:center">';
                                         echo '<input type="hidden" name="image" value="' . $image . '"/>';
                                         echo '<input type="hidden" name="category" value="' . $selectedCategory . '"/>';
-                                        echo '<button type="submit" class="deleteImage shadow" style="
+                                        echo '<button type="submit" class="deleteImage shadow" onclick="return confirm(\'Are you sure you want to delete this image?\')" style="
                                                 top: 0;
                                                 right: 0;
                                                 background-color: red;
