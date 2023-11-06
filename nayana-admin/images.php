@@ -108,11 +108,32 @@ if (isset($_POST['delete_image'])) {
                             if (isset($images)) {
                                 if (count($images) > 0) {
                                     echo '<h6>Current Images in ' . $selectedCategory . '</h6>';
+                                    echo '<div class="row col-md-12">';
                                     foreach ($images as $image) {
-                                        echo '<div style="display: inline-block; position: relative;"><img src="' . $categoryFolder . '/' . $image . '" data-toggle="modal" data-target="#imageModal" style="max-width: 200px; margin: 5px; cursor: pointer;" />';
-                                        echo '<span style="position: absolute; top: 5px; right: 5px;"><a href="#" class="deleteImage" data-image="' . $image . '"><i class="fas fa-trash-alt"></i></a></span></div>';
+                                        echo '<div class="col-md-5 mr-1" style="border:1px solid #ced4da; border-radius:.25rem"><img src="' . $categoryFolder . '/' . $image . '" data-toggle="modal" data-target="#imageModal" style="max-width: 200px; margin: 5px; cursor: pointer;" />';
+                                        echo '<form method="post" action="delete_image.php" style="position: relative; text-align:center">';
+                                        echo '<input type="hidden" name="image" value="' . $image . '"/>';
+                                        echo '<input type="hidden" name="category" value="' . $selectedCategory . '"/>';
+                                        echo '<button type="submit" class="deleteImage shadow" style="
+                                                top: 0;
+                                                right: 0;
+                                                background-color: red;
+                                                border-radius: 5px 5px 0px 0px;
+                                                padding: 8px;
+                                                width: 80px;
+                                                height: 40px;
+                                                text-align: center;
+                                                border: none;
+                                                cursor: pointer;
+                                              ">';
+                                        echo '<i class="fa fa-trash-alt text-white"></i>';
+                                        echo '</button>';
+                                        echo '</form>';
+                                        echo '</div>';
                                     }
+                                    echo "</div>";
                                 } else {
+
                                     echo '<p>No images in ' . $selectedCategory . ' folder.</p>';
                                 }
                             }
@@ -145,28 +166,6 @@ if (isset($_POST['delete_image'])) {
             var image = $(this).attr('src');
             $('#modalImage').attr('src', image);
         });
-
-        $(document).on('click', '.deleteImage', function (e) {
-            e.preventDefault();
-            var image = $(this).data('image');
-            if (confirm('Are you sure you want to delete this image?')) {
-                $.ajax({
-                    url: window.location.href,
-                    type: 'POST',
-                    data: { delete_image: image },
-                    success: function (response) {
-                        if (response === 'success') {
-                            location.reload(); // Reload the page after deletion
-                        } else {
-                            alert('Failed to delete the image.');
-                        }
-                    },
-                    error: function () {
-                        alert('Failed to delete the image.');
-                    }
-                });
-            }
-        });
     </script>
     <script>
         function showImages(category) {
@@ -183,4 +182,5 @@ if (isset($_POST['delete_image'])) {
             }
         });
     </script>
+
 <?php include_once('./foot.php'); ?>
