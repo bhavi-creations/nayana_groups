@@ -34,6 +34,7 @@ function getImages($category)
     <link rel="stylesheet" href="css/lightgallery.css" />
     <link rel="stylesheet" href="css/woocommerce.css" />
     <link rel="stylesheet" href="css/royal-preload.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -494,6 +495,12 @@ function getImages($category)
         </section>
 
      
+    <section>
+            <a href="https://api.whatsapp.com/send?phone=96888878888" class="float" target="_blank">
+                <i class="fa-brands fa-whatsapp shadow" style="color: #ffffff; background-color: #23af25; padding: 10px; border-radius: 50px; font-size: 30px; width: 50px; height: 50px;"></i> 
+            </a>
+        </section>   
+
     <footer id="site-footer" class="site-footer">
         <div class="container">
             <div class="row">
@@ -563,10 +570,10 @@ function getImages($category)
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-12 mb-4 mb-lg-0">
-                    <p>Copyright © 20203 Nayana Groups by <a class="text-light" href="#">Bhavi Creations</a>. All Rights Reserved.</p>
+                <div class="col-lg-12 col-md-12 mb-4 mb-lg-0 text-center">
+                    <p>Copyright © 2023 Nayana Groups | Designed by <a class="text-light" target="_blank" href="https://bhavicreations.com">Bhavi Creations</a></p>
                 </div>
-                <div class="col-lg-5 col-md-12 align-self-center">
+                <!-- <div class="col-lg-5 col-md-12 align-self-center">
                     <ul class="icon-list-items inline-items justify-content-lg-end">
                         <li class="icon-list-item inline-item">
                             <a href="#"><span class="icon-list-text">Terms of use</span></a>
@@ -575,7 +582,7 @@ function getImages($category)
                             <a href="#"><span class="icon-list-text">Privacy Environmental Policy</span></a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
