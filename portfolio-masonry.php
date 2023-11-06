@@ -1,3 +1,21 @@
+<?php
+$path = "./images/backend/"; // Replace this with the correct path to your images
+
+function getCategories($path)
+{
+    $categories = array_filter(glob($path . '*'), 'is_dir');
+    $categoryNames = array_map('basename', $categories);
+    return $categoryNames;
+}
+
+function getImages($category)
+{
+    global $path;
+    $categoryPath = $path . $category;
+    $images = array_diff(scandir($categoryPath), array('.', '..'));
+    return $images;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,12 +101,12 @@
                                                     <li><a href="project.html">Project Manager</a></li>
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="portfolio-masonry.html">Portfolio</a>
+                                            <li class=""><a href="portfolio-masonry.php">Portfolio</a>
                                                 <!-- <ul class="mega-sub-menu">
                                                     <li class="row">
                                                         <ul class="col">
                                                             <li class="menu-title">Portfolio Types</li>
-                                                            <li><a href="portfolio-masonry.html">Portfolio Grid Masonry</a></li>
+                                                            <li><a href="portfolio-masonry.php">Portfolio Grid Masonry</a></li>
                                                             <li><a href="portfolio-no-gap.html">Portfolio Grid No Gap</a></li>
                                                             <li><a href="portfolio-under.html">Portfolio Info Under Image</a></li>
                                                             <li><a href="portfolio-metro.html">Portfolio Metro</a></li>
@@ -258,11 +276,11 @@
                                                         <li><a href="project.html">Project Manager</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="menu-item-has-children"><a href="portfolio-masonry.html">Portfolio</a>
+                                                <li class="menu-item-has-children"><a href="portfolio-masonry.php">Portfolio</a>
                                                     <!-- <ul class="sub-menu">
-                                                        <li class="menu-item-has-children"><a href="portfolio-masonry.html">Portfolio Types</a>
+                                                        <li class="menu-item-has-children"><a href="portfolio-masonry.php">Portfolio Types</a>
                                                             <ul class="sub-menu">
-                                                                <li><a href="portfolio-masonry.html">Portfolio Grid Masonry</a></li>
+                                                                <li><a href="portfolio-masonry.php">Portfolio Grid Masonry</a></li>
                                                                 <li><a href="portfolio-no-gap.html">Portfolio Grid No Gap</a></li>
                                                                 <li><a href="portfolio-under.html">Portfolio Info Under Image</a></li>
                                                                 <li><a href="portfolio-metro.html">Portfolio Metro</a></li>
@@ -434,312 +452,42 @@
                         </div>
                         <div class="space-40"></div>
 
-                        <!-- Categories List -->
-
-
-
 
                         <div class="project-filter-wrapper">
                             <ul class="project_filters">
                                 <li><a href="#" data-filter="*" class="selected btn-details">All<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".category-19">Interiors<span class="filter-count"></span></a></li>
-                            
-                                <li><a class="btn-details" href="#" data-filter=".category-14">Residencial<span class="filter-count"></span></a></li>         
-                                <li><a class="btn-details" href="#" data-filter=".category-15">Theaters<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".category-20">Comercial Complex<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".category-16">Industrial<span class="filter-count"></span></a></li>
-                                <li><a class="btn-details" href="#" data-filter=".category-17">Hospitals<span class="filter-count"></span></a></li>
-                            
+                                <?php
+                                $categories = getCategories($path);
+                                foreach ($categories as $category) {
+                                    echo '<li><a class="btn-details" href="#" data-filter=".' . $category . '">' . $category . '<span class="filter-count"></span></a></li>';
+                                }
+                                ?>
                             </ul>
-                            <ul class="project_filters">
-                                <li><a href="#" data-filter="*" class="selected btn-details">All<span class="filter-count"></span></a></li>
-                                <!-- Categories will be dynamically added here -->
-                            </ul>
-                            
-                            <div class="projects-grid pf_3_cols style-1 img-scale w-auto">
-                                <div class="grid-sizer"></div>
-                                <!-- Images Container -->
-<div class="project-items">
-    <!-- Images will be dynamically added here -->
-</div>
 
-                                <div class="project-item category-19 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-standar.html">
-                                                <img src="images/inter3 (2).webp" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-item category-14 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-detail-slider.html">
-                                                <img src="./images/portfolio/residential1.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>Appartment</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-detail-slider.html">Appartment</a></h5>
-                                                <p class="portfolio-cates">
-                                                    <a href="#"></a>
-                                                    <a href="#">residencial</a>
-                                                </p>
-                                            </div>
-                                            <a class="overlay" href="portfolio-detail-slider.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-15 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/complex3.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>THEARTER</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">THEATER</a></h5>
-                                                <p class="portfolio-cates"><a href="#">theater</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-20 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-right.html">
-                                                <img src="./images/portfolio/commercial.jpeg" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>shopping mall</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-right.html">shopping mall</a></h5>
-                                                <p class="portfolio-cates"><a href="#">malls</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-right.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-19 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-small.html">
-                                                <img src="./images/portfolio/interior1.jpeg" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>modern house</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-small.html">modern house</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-small.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-14 ">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-big.html">
-                                                <img src="./images/portfolio/resi2.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>Minimalistic Style Appartment</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-big.html">Minimalistic Style Appartment</a></h5>
-                                                <p class="portfolio-cates"><a href="#"></a><a href="#">Residencial</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-big.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-15">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-standar.html">
-                                                <img src="./images/portfolio/complex1.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>theater </h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-standar.html">theater</a></h5>
-                                                <p class="portfolio-cates"><a href="#"></a><a href="#">theater</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-standar.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-14">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-detail-slider.html">
-                                                <img src="./images/portfolio/resi3.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>Minimal Guests House</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-detail-slider.html">Minimal Guests House</a></h5>
-                                                <p class="portfolio-cates"><a href="#">Residencial</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-detail-slider.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-19">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/interior2.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>restaurant</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">restaurant</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-16">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/complex1.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>theater</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">theater</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-16">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/commercial.jpeg" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>shopping mall</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">shopping mall</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-17">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/hospital (1).webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>hospital</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">hospital</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-17">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/hospitals2.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>hospital</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">hospital</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="project-item category-17">
-                                    <div class="projects-box">
-                                        <div class="projects-thumbnail">
-                                            <a href="portfolio-left.html">
-                                                <img src="./images/portfolio/hospital3.webp" alt="">
-                                            </a>
-                                            <!-- <div class="overlay">
-                                                <h5>hospital</h5>
-                                                <i class="ot-flaticon-add"></i>
-                                            </div> -->
-                                        </div>
-                                        <!-- <div class="portfolio-info">
-                                            <div class="portfolio-info-inner">
-                                                <h5><a class="title-link" href="portfolio-left.html">hospital</a></h5>
-                                                <p class="portfolio-cates"><a href="#">interior</a></p> 
-                                            </div>
-                                            <a class="overlay" href="portfolio-left.html"></a>
-                                        </div> -->
-                                    </div>
-                                </div>
+                            <div class="projects-grid pf_3_cols style-1 img-scale w-auto" id="lightgallery">
+                                <div class="grid-sizer"></div>
+                                <?php
+                                foreach ($categories as $category) {
+                                    $images = getImages($category);
+                                    foreach ($images as $image) {
+                                        echo '<div class="project-item ' . $category . '">
+                                                <div class="projects-box">
+                                                    <div class="projects-thumbnail">
+                                                        <a class="gallery-item" href="' . $path . $category . '/' . $image . '">
+                                                            <img class="img-responsive" src="' . $path . $category . '/' . $image . '" alt="' . $category . '">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>';
+                                    }
+                                }
+                                ?>
                             </div>
-                            <div class="btn-block text-center">
-                                <!-- <a href="portfolio-five-column-wide.html" class="btn-loadmore octf-btn">Read More</a> -->
-                            </div>
+
                         </div>
+
+
+                        
                     </div>
                 </div>
             </div>
@@ -854,37 +602,17 @@
             });
         })(jQuery);
     </script>  
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js/dist/js/lightgallery.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $.ajax({
-            url: 'get_categories.php', // Replace with your server endpoint to retrieve categories
-            type: 'GET',
-            success: function (data) {
-                data.forEach(function (category, index) {
-                    const categoryClass = 'category-' + index;
-                    $('.project_filters').append('<li><a href="#" class="btn-details" data-filter=".' + categoryClass + '">' + category + '<span class="filter-count"></span></a></li>');
-
-                    $.ajax({
-                        url: 'get_images.php?category=' + category, // Replace with your server endpoint to retrieve images for each category
-                        type: 'GET',
-                        success: function (images) {
-                            console.log(images);
-                            images.forEach(function (image) {
-                                $('.project-items').append('<div class="project-item ' + categoryClass + '"><div class="projects-box"><div class="projects-thumbnail"><a href="portfolio-standar.html"><img src="' + image + '" alt=""></a></div></div></div>');
-                            });
-                        },
-                        error: function () {
-                            console.error('Error fetching images for ' + category);
-                        }
-                    });
-                });
-            },
-            error: function () {
-                console.error('Error fetching categories');
-            }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('lightgallery'), {
+                selector: '.gallery-item',
+                mode: 'lg-slide',
+                download: false // Customize this based on your preference
+                // Other options can be configured based on LightGallery documentation
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
