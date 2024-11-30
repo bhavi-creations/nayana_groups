@@ -52,7 +52,7 @@ function getImages($category)
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
                                         <a href="index.html">
-                                            <img src="images/NayanaGroups-Logo-new-.png" alt="Theratio" class="">
+                                        <img src="images/edt_ogo.jpg" alt="Theratio" style="margin-left: 50px;"  class="logo-image img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -567,25 +567,55 @@ function getImages($category)
             </div>
         </div>
     </footer><!-- #site-footer -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 mb-4 mb-lg-0 text-center">
-                    <p>Copyright © 2023 Nayana Groups | Designed by <a class="text-light" target="_blank" href="https://bhavicreations.com">Bhavi Creations</a></p>
-                </div>
-                <!-- <div class="col-lg-5 col-md-12 align-self-center">
-                    <ul class="icon-list-items inline-items justify-content-lg-end">
-                        <li class="icon-list-item inline-item">
-                            <a href="#"><span class="icon-list-text">Terms of use</span></a>
-                        </li>
-                        <li class="icon-list-item inline-item">
-                            <a href="#"><span class="icon-list-text">Privacy Environmental Policy</span></a>
-                        </li>
-                    </ul>
-                </div> -->
-            </div>
-        </div>
-    </div>
+    <div  class="footer-area-bottom theme-bg"   style="background-color: #919191"  >
+       
+      
+       <div class="container">
+         <div class="row pt-4">
+           <div class="col-md-6 col-12">
+             <div class="footer-widget__copyright-info info-direction">
+               <p class="last_text">
+                 <a
+                   href="terms.html"
+                   style="text-decoration: none; color: #ffffff"
+                   >Terms & conditions
+                 </a>
+                 <a
+                   href="privacy.html"
+                   style="text-decoration: none; color: #ffffff"
+                 >
+                   Privacy & policy</a
+                 >
+               </p>
+             </div>
+           </div>
+
+           <div class="col-md-6 col-12 second_divv_end_brand">
+             <div
+               class="footer-widget__copyright-info info-direction d-flex flex-row justify-content-end align-items-center"
+             >
+               <a
+                 href="https://bhavicreations.com/"
+                 target="_blank"
+                 style="
+                   text-decoration: none;
+                   color: #ffffff;
+                   display: flex;
+                   align-items: center;
+                 "
+               >
+                 <p class="mini_text last_text mb-0">Branding By @</p>
+                 <img
+                   src="images/bhavi_logo/Bhavi_Branding_Stamp.png"
+                   class="img-fluid brand_image"
+                   alt=""
+                 />
+               </a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 </div><!-- #page -->
 <a id="back-to-top" href="#" class="show"><i class="ot-flaticon-left-arrow"></i></a>
         <!-- jQuery -->
