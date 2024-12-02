@@ -7109,10 +7109,7 @@ div.elementor-widget-heading .elementor-heading-title {
 .main-navigation {
   position: unset;
 }
-.main-navigation > ul {
-  position: unset;
-  padding-left: 445px;
-}
+
 .main-navigation > ul > li.mega-dropdown {
   display: list-item;
   float: none;
@@ -8475,7 +8472,10 @@ ul.style-default li:last-child, ol.style-default li:last-child {
     background-size: cover;
     padding-top: 90px;
     padding-bottom: 90px;
+    margin-top: 100px;
 }
+
+
 .story-text {
     color: #FFF;
     font-family: "Titillium Web",Sans-serif;
@@ -10573,5 +10573,37 @@ p {
     width: 23%;
     margin-top: 0%;
     margin-left: 5px;
+  }
+}
+
+
+.video1 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
+
+@media (max-width:1025px) {
+  .video1{
+    margin-top: 77px;
+  }
+}
+.main-navigation > ul {
+  position: unset;
+  
+}
+@media (min-width:1025px) and (max-width:1375px) {
+  .main-navigation > ul {
+   
+    padding-left: 145px;
+  }
+}
+
+
+@media (min-width:1375px)   {
+  .main-navigation > ul {
+   
+    padding-left:4  45px;
   }
 }
