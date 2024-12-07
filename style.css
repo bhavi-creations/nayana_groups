@@ -940,11 +940,17 @@ big {
 .header-vertical .container {
   width: 100%;
 }
+.logo-image{
+ border-radius: 10px;
+ margin: 10px;
+}
+
 
 @media (min-width: 768px) {
   .header-vertical .container {
     max-width: 750px;
   }
+ 
 }
 @media (min-width: 992px) {
   .header-vertical .container {
@@ -2071,6 +2077,8 @@ a:hover, a:active {
     height: 100%;
   }
 }
+
+
 /*--------------------------------------------------------------
 ## Header Mobile
 --------------------------------------------------------------*/
@@ -2112,13 +2120,26 @@ a:hover, a:active {
     position: relative;
   }
   .header_mobile .mlogo_wrapper img {
-    height: 90px;
+    height: 60px;
+    border-radius: 10px;
+  
+    margin: 10px;
+   
   }
 
-  .header_mobile .mlogo_wrapper .mobile_logo {
+  .header_mobile .mlogo_wrapper .mobile_logo 
+
+  
+  
+  {
     float: left;
   }
 
+
+  /* .mobile_logo .image{
+    height: 60px;
+    border-radius: 20%;
+  } */
   #mmenu_toggle {
     position: absolute;
     cursor: pointer;
@@ -2128,6 +2149,7 @@ a:hover, a:active {
     margin-top: -10px;
     top: 50%;
   }
+
 
   #mmenu_toggle button {
     position: absolute;
@@ -7194,8 +7216,9 @@ div.elementor-widget-heading .elementor-heading-title {
 .header_mobile .octf-menu-mobile {
     padding-right: 15px;
 }
-.header_mobile .mlogo_wrapper img {
+.header_mobile .mlogo_wrapper{
     height: 76px;
+    
 }
 .header_mobile .octf-row{
     display: flex;
@@ -10606,4 +10629,24 @@ p {
    
     padding-left:445px;
   }
+}
+
+
+.text{
+  font-size: 15px;
+  font-weight: 600;
+
+}
+.text:hover{
+  color: red;
+}
+.btn{
+  border: none;
+  color: white;
+}
+
+.text_center{
+	line-height: 350px;
+  font-size: 30px;
+  font-weight: 800;
 }
