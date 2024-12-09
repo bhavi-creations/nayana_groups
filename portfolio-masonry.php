@@ -24,7 +24,7 @@ function getImages($category)
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>nayana</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/NayanaGroups-Logo-new-.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/NAYANAGROUP.png" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/flaticon.css" />
@@ -52,14 +52,14 @@ function getImages($category)
                                 <div class="octf-col logo-col no-padding">
                                     <div id="site-logo" class="site-logo">
                                         <a href="index.html">
-                                        <img src="images/edt_ogo.jpg" alt="Theratio" style="margin-left: 50px;"  class="logo-image img-fluid">
+                                        <img src="images/NAYANAGROUP.png" alt="Theratio" style="margin-left: 50px;"  class="logo-image img-fluid">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="octf-col menu-col no-padding">
                                     <nav id="site-navigation" class="main-navigation">
                                         <ul class="menu">
-                                            <li class=" current-menu-item current-menu-ancestor">
+                                            <li class=" current-menu-item current-menu-ancestor need_bold_font ">
                                                 <a href="index.html">Home</a>
                                                 <!-- <ul class="sub-menu">
                                                     <li class="current-menu-item"><a href="index.html">Main Home</a></li>
@@ -73,7 +73,7 @@ function getImages($category)
                                                     <li><a href="index-sidenav.html">Home with Side Menu</a></li>
                                                 </ul> -->
                                             </li>
-                                            <li class=""><a href="about-us.html">About Us</a>
+                                            <li class=" need_bold_font"><a href="about-us.html">About Us</a>
                                                 <!-- <ul class="sub-menu">
                                                     <li><a href="about-us.html">About Us</a></li>
                                                     <li><a href="our-services.html">Our Services</a></li>
@@ -95,14 +95,14 @@ function getImages($category)
                                                     <li><a href="404-error.html">404 Error</a></li>
                                                 </ul> -->
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Services</a>
+                                            <li class="menu-item-has-children  need_bold_font"><a href="#">Services</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="architecture.html">Architecture</a></li>
                                                     <li><a href="interior.html">Interior</a></li>
                                                     <li><a href="project.html">Project Manager</a></li>
                                                 </ul>
                                             </li>
-                                            <li class=""><a href="portfolio-masonry.php">Portfolio</a>
+                                            <li class=" need_bold_font"><a href="portfolio-masonry.php">Portfolio</a>
                                                 <!-- <ul class="mega-sub-menu">
                                                     <li class="row">
                                                         <ul class="col">
@@ -151,7 +151,7 @@ function getImages($category)
                                                     <li><a href="post.html">Blog Single</a></li>
                                                 </ul>
                                             </li> -->
-                                            <li><a href="contact.html">Contacts</a></li>
+                                            <li class=" need_bold_font"><a href="contact.html">Contacts</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -231,7 +231,7 @@ function getImages($category)
                             <div class="mlogo_wrapper clearfix">
                                 <div class="mobile_logo">
                                     <a href="index.html">
-                                        <img src="images/NayanaGroups-Logo-new-.jpeg" alt="Theratio">
+                                        <img src="images/NAYANAGROUP.png" alt="Theratio">
                                     </a>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@ function getImages($category)
                 <div class="side-panel-wrap">
                     <div class="the-logo">
                         <a href="index-html">
-                            <img src="images/NayanaGroups-Logo-new-.jpeg" alt="Theratio">
+                            <img src="images/NAYANAGROUP.png" alt="Theratio">
                         </a>                    
                     </div>
                     <!-- <div class="ot-heading">
@@ -406,11 +406,11 @@ function getImages($category)
                         <ul class="panel-cinfo">
                             <li class="panel-list-item">
                                 <span class="panel-list-icon"><i class="ot-flaticon-place"></i></span>
-                                <span class="panel-list-text">Jawaharlal Street, opp.venky residency Kakinada.</span>
+                                <span class="panel-list-text">13-3-1/1, Opp.Anandabharati School Cinemaroad, Kakinada, A.p</span>
                             </li>
                             <li class="panel-list-item">
                                 <span class="panel-list-icon"><i class="ot-flaticon-mail"></i></span>
-                                <span class="panel-list-text">nayanagroups2022@gmail.com</span>
+                                <span class="panel-list-text">nayanagroup21@gmail.com</span>
                             </li>
                             <li class="panel-list-item">
                                 <span class="panel-list-icon"><i class="ot-flaticon-phone-call"></i></span>
@@ -506,7 +506,7 @@ function getImages($category)
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-4 mb-xl-0">
                     <div class="widget-footer">
-                        <img src="images/NayanaGroups-Logo-new-.png" class="footer-logo" alt="">
+                        <img src="images/NAYANAGROUP.png" class="footer-logo" alt="">
                         <p>We provides a full range of interior design, architectural design.</p>
                         <div class="footer-social list-social">
                             <ul>
@@ -527,11 +527,11 @@ function getImages($category)
                         <ul class="footer-list">
                             <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="ot-flaticon-place"></i></span>
-                                <span class="list-item-text">Jawaharlal Street, opp.venky residency Kakinada.</span>
+                                <span class="list-item-text">13-3-1/1, Opp.Anandabharati School Cinemaroad, Kakinada,A.p</span>
                             </li>
                             <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="ot-flaticon-mail"></i></span>
-                                <span class="list-item-text">nayanagroups2022@gmail.com</span>
+                                <span class="list-item-text">nayanagroup21@gmail.com</span>
                             </li>
                             <li class="footer-list-item">
                                 <span class="list-item-icon"><i class="ot-flaticon-phone-call"></i></span>

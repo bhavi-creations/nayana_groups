@@ -474,7 +474,8 @@
         <section class="contact-page">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 align-self-center mb-5 mb-lg-0">
+                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6 align-self-center mb-5 mb-lg-0"> -->
                         <div class="contact-left">
                             <h2>Get in Touch</h2>
                             <p class="font14">Your email address will not be published. Required fields are marked *</p>
@@ -502,14 +503,14 @@
                                     <div class="error" id="err-state"></div>
                                 </div>
                             </form> -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <h5 for="name">name</h5>
                                 <input type="text" id="name" class="form-control" placeholder="Enter your name">
                         
                             </div>
                             <div class="form-group">
                                 <h5 for="email">Email</h5>
-                                <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" name="contactemail">
                         
                             </div>
                             <div class="form-group">
@@ -517,13 +518,55 @@
                                 <textarea id="message" rows="3" class="form-control"></textarea>
                         
                             </div>
-                            <button class="bg-primary btn" onclick="sendMail()">send meassage</button>
+                            <button class="bg-primary btn" onclick="sendMail()">send meassage</button> -->
+
+
+                            <form action="contactform.php" method="post" role="form" class="php-email-form">
+
+                                <div class="row g-3">
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="text" name="contactname" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" name="contactemail" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating ">
+                                            <input type="phone" class="form-control" name="contactnumber" id="phone" placeholder="Phone">
+                                            <label for="phone">Your Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating ">
+                                            <input type="text" class="form-control" name="contactproject" id="project" placeholder="Project">
+                                            <label for="project">Your Project</label>
+                                        </div>
+                                    </div>
+                               
+                                    <div class="col-12">
+                                        <div class="form-floating ">
+                                            <textarea class="form-control" name="contactmessage" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3">Send Message</button>
+                                    </div>
+                                </div>
+                            </form> 
+
                    
-                            <div class="clear"></div>
-                            <div id="ajaxsuccess">Successfully sent!!</div>
+                             <div class="clear"></div>
+                            <div id="ajaxsuccess">Successfully sent!!</div> 
                             <div class="clear"></div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-lg-6">
                         <div class="contact-right">
                             <div class="ot-heading">
