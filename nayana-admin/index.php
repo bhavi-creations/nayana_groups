@@ -35,7 +35,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card p-4">
                     <div class="text-center mb-3 p-3 rounded bg-light">
-                      <img src="../images/NayanaGroups-Logo-new-.png" class="img-fluid" width="150" alt="">
+                      <img src="../images/NAYANAGROUP.png" class="img-fluid" width="150" alt="">
                       <p class="mb-0">Nayana Groups</p>
                     </div>
                     <!-- <hr> -->

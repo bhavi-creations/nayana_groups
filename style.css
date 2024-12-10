@@ -1225,6 +1225,7 @@ input[type=time],
 input[type=datetime],
 input[type=datetime-local],
 input[type=color],
+input[type=phone],
 textarea {
   color: #555555;
   border: none;
@@ -1251,6 +1252,7 @@ input[type=time]:focus,
 input[type=datetime]:focus,
 input[type=datetime-local]:focus,
 input[type=color]:focus,
+input[type=phone]:focus,
 textarea:focus {
   color: #555555;
 }
