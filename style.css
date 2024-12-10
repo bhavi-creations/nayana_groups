@@ -7911,7 +7911,12 @@ section {
     bottom: 0;
     right: 0;
     top: auto;
-    background-color: #F4F4F4;
+  
+    
+
+
+
+
     -webkit-transform: translateY(0%);
     -ms-transform: translateY(0%);
     transform: translateY(0%);

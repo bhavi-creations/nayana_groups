@@ -27,14 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'manimalladi05@gmail.com'; // Your Gmail email address
-        $mail->Password = 'bznaoqikajgocfot'; // Your Gmail password
+        $mail->Username = 'nayanagroup21@gmail.com'; // Your Gmail email address
+        $mail->Password = ''; // Your Gmail password
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Recipients
-        $mail->setFrom('manimalladi05@gmail.com', 'nayanagroups'); // Your Gmail email and name
-        $mail->addAddress('manimalladi05@gmail.com', 'nayanagroups'); // Recipient's email and name
+        $mail->setFrom('nayanagroup21@gmail.com', 'nayanagroups'); // Your Gmail email and name
+        $mail->addAddress('nayanagroup21@gmail.com', 'nayanagroups'); // Recipient's email and name
 
         // Content
         $mail->isHTML(true);
