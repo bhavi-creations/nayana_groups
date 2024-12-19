@@ -10781,25 +10781,25 @@ p {
      .about-1{
       margin-bottom: -100px;
      }
-     .custom-card-img{
-      margin-top: -50px;
-     }
-
+   
+ 
 .services-1{
   margin-top: -250px;
 }
-.Ex_term{
+
+/* .Ex_term{
   margin-top: -50px;
-}
+}  */
   .app{
     margin-bottom: -250px;
   }
    
-   .text_center{
-    line-height: 350px;
-    font-size: 25px;
-    font-weight: 800;
+  @media (max-width:375px){
+    .found1{
+      margin-top: 50px;
+     }
    }
+  
 
 
     @media (min-width:375px) and (max-width:768px){
@@ -10807,30 +10807,74 @@ p {
       .text_center{
          font-size: 20px;
          text-align: center;
-         line-height: 350px;
-     
+         line-height: 250px;
+         font-weight: 800;
+    
       }
+      /* .about-1{
+        margin-bottom: -20px;
+       }
+
+       .custom-card-img{
+        margin-top: -60px;
+       }
+        .Ex_term{
+          margin-top:-120px;
+            
+           } */
+       } 
+      
       
     
-    }
+    @media (min-width:768px) and (max-width:998px){ 
+      .text_center{
+        font-size: 20px;
+        text-align: center;
+        line-height: 350px;
+        font-weight: 800;
+    
+     }
+   
+      }
 
     @media (min-width:998px) and (max-width:1200px){ 
       .text_center{
         font-size: 20px;
         text-align: center;
         line-height: 300px;
+        font-weight: 800;
        } 
+       .pro{
+        margin-bottom: -30px;
+       }
+        
       }
-
-      /* 
+      
    @media (min-width:1200px) and (max-width:1400px){  
 
     .text_center{
+     
+      text-align: center;
       line-height: 350px;
       font-size: 20px;
       font-weight: 800;
-     }
+      }  
      
-    
+      .pro{
+        margin-bottom: -30px;
+        padding-bottom: 30px;
+       }
+  
+     /* .custom-card-img{
+       margin-top: -70px;
+     } */
+    }
 
-    } */
+    @media (min-width:1400px) and (max-width:1600px){ 
+      .text_center{
+        line-height: 350px;
+        font-size: 20px;
+        font-weight: 800;
+       }
+    }
+  
