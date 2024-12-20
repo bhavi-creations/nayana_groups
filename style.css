@@ -4298,7 +4298,7 @@ object {
 .ot-testimonials .testi-item .ttext {
   position: relative;
   margin-bottom: 50px;
-  padding: 37px 35px 37px 40px;
+  padding: 20px 25px 20px 20px;
   font-size: 18px;
   line-height: 36px;
   background: #fff;
@@ -10877,4 +10877,73 @@ p {
         font-weight: 800;
        }
     }
-  
+
+    .wat{
+      z-index: 9999;
+      
+    }
+
+   @media (max-width:375px){
+    
+    .show{
+    left:320px;
+   }
+  }
+
+  @media (min-width:768px){
+    
+    .show{
+    left:710px;
+   }
+  }
+  @media (min-width:992px){
+    
+    .show{
+    left:970px;
+   }
+  }
+
+  @media (min-width:1200px) and (max-width:1400px){
+    
+    .show{
+    left:1250px;
+   }
+  }
+
+  @media (min-width:1400px) and (max-width:1600px){
+    
+    .show{
+    left:1360px;
+   }
+  }
+
+  @media (min-width:375px) and (max-width:768px){
+    
+    .box{
+     height:400px ;
+    }
+}
+  @media (min-width:768px) and (max-width:998px){
+    
+    .box{
+     height:250px ;
+    }
+}
+@media (min-width:998px) and (max-width:1200px){
+    
+  .box{
+   height:430px ;
+  }
+}
+@media (min-width:1200px) and (max-width:1400px){
+    
+  .box{
+   height:430px ;
+  }
+}
+@media (min-width:1400px) and (max-width:1600px){
+    
+  .box{
+   height:430px ;
+  }
+}

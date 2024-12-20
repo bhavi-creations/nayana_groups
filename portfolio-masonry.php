@@ -496,7 +496,7 @@ function getImages($category)
 
      
     <section>
-            <a href="https://api.whatsapp.com/send?phone=9688887888" class="float" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=9688887888" class="float wat" target="_blank">
                 <i class="fa-brands fa-whatsapp shadow" style="color: #ffffff; background-color: #23af25; padding: 10px; border-radius: 50px; font-size: 30px; width: 50px; height: 50px;"></i> 
             </a>
         </section>   
